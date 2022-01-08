@@ -1,0 +1,258 @@
+body{
+    background-color: rgb(11, 106, 122);
+    background-image:url("external-content.duckduckgo.com.jpg");
+    background-size: cover;
+    margin:0px;
+    overflow: hidden;
+   
+}
+.center_div{
+    margin-left:35vw;
+    
+    text-align: center;   
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    padding-bottom: 0px;
+    
+}
+.frame{
+    position:absolute;
+    height: 100vh;
+    margin:0px;
+}
+.can{
+    background-image: url(https://t3.ftcdn.net/jpg/01/81/20/64/240_F_181206484_B7des4LZ7AqYdvfDY3JtQi7zowsHeZMg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    display:inline;
+    padding: 0px;
+    margin: 20px;
+    margin-top:160px;
+    border-radius: 50%;
+    height: 70vh;
+    width: 60vh;
+
+
+}
+
+.grid{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+   display:grid;
+   grid-template-columns: repeat(7,1ft);
+   grid-template-rows: repeat(4,1ft); 
+   grid-template-areas: 
+   "creanga-roz . floare-galbena floare-mov pasare-floare-rama . creanga-mar"
+   "creanga-pasari pasare-solo . . . fluture-solo creanga-pui"
+   "floare-portocalie-fluture . . . . porumbel ."
+   "ciuperci cos-miere-albina lumanari . cafea-lalele . ceai";
+}
+.creanga-roz{
+    grid-area:creanga-roz;
+   
+    
+}
+.creanga-roz img{
+    position:absolute;
+    height:450px;
+    width:600px;
+    margin-top: -50px;
+    margin-left: -30px;
+}
+
+.floare-galbena{
+    grid-area:floare-galbena;
+}
+.floare-galbena img{
+    position:absolute;
+    height:250px;
+    width:400px;
+    margin-top: 100px;
+}
+
+.floare-mov{
+    grid-area:floare-mov;
+}
+.floare-mov img{
+    position:absolute;  
+    width: 400px;
+    height: 350px;
+    margin-left:100px;
+    transform: scaleX(-1) rotate(-10deg);
+}
+
+.pasare-floare-rama{
+    grid-area:pasare-floare-rama;
+}
+.pasare-floare-rama img{
+    position:absolute;
+}
+#fl{
+    width:300px;
+    height: 300px;
+    margin-left: 130px;
+    margin-top:60px;
+    transform: rotate(20deg);
+}
+#ps{
+  margin-top:-50px;
+}
+
+.creanga-mar{
+    grid-area:creanga-mar;
+}
+.creanga-mar img{
+    position:absolute;
+    height:400px;
+    width:500px;
+    margin-left: -150px;
+    margin-top:-80px
+}
+.creanga-pasari{
+    grid-area:creanga-pasari;
+}
+.creanga-pasari img{
+    position:absolute;
+    height:300px;
+    width:400px;
+    margin-left:-20px;
+    margin-top:-30px;
+}
+.pasare-solo{
+    grid-area:pasare-solo;
+}
+.pasare-solo img{
+    position:absolute;
+    height:400px;
+    width:400px;
+    margin-top:80px;
+}
+.fluture-solo{
+    grid-area:fluture-solo;
+}
+.fluture-solo img{
+    position:absolute;
+    height:250px;
+    width:200px;
+    margin-left: 80px;
+    margin-top: -30px;
+}
+.creanga-pui{
+    grid-area:creanga-pui;
+}
+.creanga-pui img{
+    position:absolute;
+    height:300px;
+    width:400px;
+}
+.floare-portocalie-fluture{
+    grid-area:floare-portocalie-fluture;
+}
+.floare-portocalie-fluture img{
+    position:absolute;
+}
+#gb{
+    width: 300px;
+    height: 400px;
+    margin-left: -60px;
+    transform: rotate(10deg);
+}
+#flc{
+    width: 180px;
+    height: 180px;
+    margin-top:100px;
+    margin-left: 50px;
+}
+
+.porumbel{
+    grid-area:porumbel;
+}
+.porumbel img{
+    position:absolute;
+    height:400px;
+    width:400px;
+    margin-left: 100px;
+    margin-top: -70px;
+    transform:scaleX(-1);
+}
+.ciuperci{
+    grid-area:ciuperci;
+}
+.ciuperci img{
+    position:absolute;
+    height:300px;
+    width:400px;
+    margin-left: -50px;
+    margin-top:-30px;
+}
+.cos-miere-albina{
+    grid-area:cos-miere-albina;
+}
+.cos-miere-albina img{
+    position:absolute;
+    height:250px;
+    width:200px;
+}
+#cos{
+    width: 500px;
+    height: 500px;
+    margin-top: -200px;
+    margin-left: 80px;
+}
+#miere{
+    width: 300px;
+    height: 300px;
+}
+#albina{
+    margin-top:-100px;
+}
+.lumanari{
+    grid-area:lumanari;
+}
+.lumanari img{
+    position:absolute;
+    height:200px;
+    width:200px;
+    margin-left:180px;
+    margin-top:70px;
+}
+.cafea-lalele{
+    grid-area:cafea-lalele;
+}
+.cafea-lalele img{
+    position:absolute;
+    height:250px;
+    width:200px;
+}
+#cafea{
+    width: 550px;
+    height: 280px;
+    margin-left:-90px;
+}
+#abur{
+    margin-top:-220px;
+    margin-left: 100px;
+}
+#sticlete{
+    margin-top:-115px;
+    margin-left:200px;
+    height: 200px;
+}
+#lalele{
+    width: 400px;
+    height: 400px;
+    margin-top:-125px;
+    margin-left:200px;
+}
+.ceai{
+    grid-area:ceai;
+}
+.ceai img{
+    position:absolute;
+    height:450px;
+    width:500px;
+    margin-left: -150px;
+    margin-top:-100px;
+}
