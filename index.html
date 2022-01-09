@@ -9,9 +9,16 @@
         <div class="center_div">
             
             <canvas id="can" class ="can">not working</canvas>
-         
+            
              <img id="rama" class="frame" src="168-1688531_vintage-mirror-png.png" width="900px" height="500px"/>
              </div>
+
+             <img id="globe_s" src="globe.png"/>
+
+             <img id="globe_d" src="globe.gif" onclick="getLocation()" 
+             onmouseover="alive(id)" onmouseleave="dead(id)" onclick="getLocation()"/>
+             
+
         <div class="grid">
             <div class="creanga-roz">
                 <img src="./10301908_05ea8-removebg-preview.png" height="auto" width="auto">
@@ -31,7 +38,9 @@
                 <img src="./10301897_9ecf0-removebg-preview.png" height="auto" width="auto">
             </div>
             <div class="creanga-pasari">
-                <img src="10301876-eae21-unscreen.gif" height="auto" width="auto">
+                <img src="10301876-eae21-unscreen.gif" height="auto" width="auto"
+                onmouseover="document.getElementById('chirp').play()"
+                onmouseout="document.getElementById('chirp').pause()">>
             </div>
             <div class="pasare-solo">
                 <img src="10301881-d13ce-unscreen.gif" height="auto" width="auto">
@@ -40,43 +49,67 @@
                 <img src="10301887-abef8-unscreen.gif" height="auto" width="auto">
             </div>
             <div class="creanga-pui">
-                <img src="10301857-f146e-unscreen.gif" height="auto" width="auto">
+                <img id="creanga" src="10301857-f146e-unscreen.gif" height="auto" width="auto"
+                onmouseover="document.getElementById('chirp').play()"
+                onmouseout="document.getElementById('chirp').pause()" onclick="addfilter(id)">
             </div>
             <div class="floare-portocalie-fluture">
                 <img id="gb" src="10301898_70f8d-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
                 <img id="flc" src="10301890_6299c-removebg-preview.png" height="auto" width="auto">
             </div>
             <div class="porumbel">
-                <img src="10301818-1438f-unscreen.gif" height="auto" width="auto">
+                <img src="10301818-1438f-unscreen.gif" height="auto" width="auto"
+                onmouseover="document.getElementById('pigeon').play()"
+                onmouseout="document.getElementById('pigeon').pause()"/>
             </div>
             <div class="ciuperci">
-                <img id="ciuperci" src="./10301938_885d6-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
+                <img id="ciuperci" src="./10301938_885d6-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" 
+                onmouseover="document.getElementById('shrooms').play()"
+                onmouseout="document.getElementById('shrooms').pause()"/>
             </div>
             <div class="cos-miere-albina">
                 <img id="cos" src="10301921_83a51-removebg-preview.png" height="auto" width="auto">
                 <img id="miere" src="10301915_3ed9c-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
-                <img id="albina" src="10301914-43142-unscreen.gif" height="auto" width="auto">
+                <img id="albina" src="10301914-43142-unscreen.gif" height="auto" width="auto"
+                onmouseover="document.getElementById('bee').play()"
+                onmouseout="document.getElementById('bee').pause()">
             </div>
             <div class="lumanari">
                 <img src="10301923_8ade9-removebg-preview.png" height="auto" width="auto">
             </div>
             <div class="cafea-lalele">
-                <img id="cafea" src="10301847-0adaf-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)" />
+                <img id="cafea" src="10301847-0adaf-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)" 
+                onmouseover="document.getElementById('coffee').play()"
+                onmouseout="document.getElementById('coffee').pause()"/>
+
                 <img id="lalele" src="10301895_3141f-removebg-preview.png" height="auto" width="auto">
                 <img id="abur" src="10301830-784d2-unscreen.gif" height="auto" width="auto">
                 <img id="sticlete" src="./10301877-442b5-unscreen.gif">
             </div>
             <div class="ceai">
-                <img id="ceai" src="10301848-374b0-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)">
+                <img id="ceai" src="10301848-374b0-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)"
+                onmouseover="document.getElementById('cups').play()"
+                onmouseout="document.getElementById('cups').pause()"/>
             </div>
-            
+            <div id="message" onclick="fadeMessage()"><p id="bn">Buna dimineata!</p></div>
         </div>
+
+       
+
         <div>
-            <video id="video" width="0px" height="0px" autoplay="true"></video>
             
+            <canvas id="auxcanvas" width="400px" height="150px"></canvas>
+            <video id="video" width="0px" height="0px" autoplay="true"></video>
+            <audio id="shrooms" src="chipmunk.mp3"></audio>
+            <audio id="cups" src="cups.mp3"></audio>
+            <audio id="bee" src="bee.mp3"></audio>
+            <audio id="coffee" src="coffee.mp3"></audio>
+            <audio id="chirp" src="chirp.mp3"></audio>
+            <audio id="pigeon" src="pigeon.mp3"></audio>
         </div>
        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
            <defs>
+            
                 <filter id="fl_cafea">
                     <feImage href="./Floating-Stars-Transparent-Background.png" result="star"></feImage>
                     <feBlend in="SourceGraphic" in2="star" mode="multiply"></feBlend>
@@ -106,7 +139,11 @@
         <filter id="fl_ciuperci">
             <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true"/>
             </filter>
+            <filter id="fl_creanga">
+            <feConvolveMatrix order="3" kernelMatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgeMode="duplicate" result="convo"/>
+            </filter>
         </defs>
         </svg>
+
     </body>
 </html>
