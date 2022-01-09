@@ -82,7 +82,10 @@ body{
     margin-left:100px;
     transform: scaleX(-1) rotate(-10deg);
 }
-
+#stars{
+    margin-top:200px;
+    margin-left: -50px
+}
 .pasare-floare-rama{
     grid-area:pasare-floare-rama;
 }

@@ -9,7 +9,8 @@
         <div class="center_div">
             
             <canvas id="can" class ="can">not working</canvas>
-             <img id="image" class="frame" src="168-1688531_vintage-mirror-png.png" width="900px" height="500px"/>
+         
+             <img id="rama" class="frame" src="168-1688531_vintage-mirror-png.png" width="900px" height="500px"/>
              </div>
         <div class="grid">
             <div class="creanga-roz">
@@ -20,6 +21,7 @@
             </div>
             <div class="floare-mov">
                 <img src="10301899_3fadb-removebg-preview.png" height="auto" width="auto">
+                <img src="Floating-Stars-Transparent-Background.png" height="auto" width="auto" id="stars" hidden>
             </div>
             <div class="pasare-floare-rama">
                 <img id="ps" src="10301879-1a2e9-unscreen.gif" height="auto" width="auto">
@@ -41,36 +43,70 @@
                 <img src="10301857-f146e-unscreen.gif" height="auto" width="auto">
             </div>
             <div class="floare-portocalie-fluture">
-                <img id="gb" src="10301898_70f8d-removebg-preview.png" height="auto" width="auto">
+                <img id="gb" src="10301898_70f8d-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
                 <img id="flc" src="10301890_6299c-removebg-preview.png" height="auto" width="auto">
             </div>
             <div class="porumbel">
                 <img src="10301818-1438f-unscreen.gif" height="auto" width="auto">
             </div>
             <div class="ciuperci">
-                <img src="./10301938_885d6-removebg-preview.png" height="auto" width="auto">
+                <img id="ciuperci" src="./10301938_885d6-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
             </div>
             <div class="cos-miere-albina">
                 <img id="cos" src="10301921_83a51-removebg-preview.png" height="auto" width="auto">
-                <img id="miere" src="10301915_3ed9c-removebg-preview.png" height="auto" width="auto">
+                <img id="miere" src="10301915_3ed9c-removebg-preview.png" height="auto" width="auto" onclick="addfilter(id)" />
                 <img id="albina" src="10301914-43142-unscreen.gif" height="auto" width="auto">
             </div>
             <div class="lumanari">
                 <img src="10301923_8ade9-removebg-preview.png" height="auto" width="auto">
             </div>
             <div class="cafea-lalele">
-                <img id="cafea" src="10301847-0adaf-unscreen.gif" height="auto" width="auto">
+                <img id="cafea" src="10301847-0adaf-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)" />
                 <img id="lalele" src="10301895_3141f-removebg-preview.png" height="auto" width="auto">
                 <img id="abur" src="10301830-784d2-unscreen.gif" height="auto" width="auto">
                 <img id="sticlete" src="./10301877-442b5-unscreen.gif">
             </div>
             <div class="ceai">
-                <img src="10301848-374b0-unscreen.gif" height="auto" width="auto">
+                <img id="ceai" src="10301848-374b0-unscreen.gif" height="auto" width="auto" onclick="addfilter(id)">
             </div>
             
         </div>
         <div>
             <video id="video" width="0px" height="0px" autoplay="true"></video>
+            
         </div>
+       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <defs>
+                <filter id="fl_cafea">
+                    <feImage href="./Floating-Stars-Transparent-Background.png" result="star"></feImage>
+                    <feBlend in="SourceGraphic" in2="star" mode="multiply"></feBlend>
+                </filter>
+               <filter id="fl_ceai">
+                <feTurbulence type="turbulence" baseFrequency="0.05"
+                numOctaves="2" result="turbulence"/>
+            <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                scale="50" xChannelSelector="R" yChannelSelector="G"/>
+               </filter>
+            <filter id="fl_miere">
+                <feMorphology operator="erode" radius="4"/>
+              </filter>
+          <filter id="fl_gb" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+        1 0 0 0 0
+        1 0 0 0 0
+        0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+            <feComponentTransfer in="colormatrix" result="componentTransfer">
+                    <feFuncR type="table" tableValues="1 0.98 0.27"/>
+                <feFuncG type="table" tableValues="0.17 1 0.31"/>
+                <feFuncB type="table" tableValues="0.7 0.84 0.64"/>
+                <feFuncA type="table" tableValues="0 1"/>
+              </feComponentTransfer>
+            <feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+        </filter>
+        <filter id="fl_ciuperci">
+            <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true"/>
+            </filter>
+        </defs>
+        </svg>
     </body>
 </html>
